@@ -32,6 +32,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 // development error handler
 // will print stacktrace
 
+// define an app controller
+
+require('./controller')(app);
 
 // production error handler
 // no stacktraces leaked to user
