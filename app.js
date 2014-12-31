@@ -38,8 +38,13 @@ require('./controller')(app);
 
 // production error handler
 // no stacktraces leaked to user
+app.use(function (req, res, next) {
+    res.render('error');
+});
 
+app.use(function (err, req, res, next) {
 
+});
 
 var server = app.listen(app.get('port'), function () {
     util.log('Express server listening on port ' + server.address().port);
