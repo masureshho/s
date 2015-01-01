@@ -1,12 +1,20 @@
 body {
- 
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  
+	 	
 }
 
 a {
   color: #00B7FF;
 }
+
+.full-width {
+	width: 100%;
+}
+
+.div-center{
+	margin: 0 auto;
+	float: none;
+}
+
 
 #error{
 width: 100px;
@@ -20,15 +28,92 @@ width: 100px;
 text-align: center;
 }
 
-nav {
-	height: 150px !important;
-	background-color: #327F96 !important;
+#index-header {
+	height: 150px;
+	background-color: #327F96;
+	color: white;
 }
-nav input {
-	margin-top: 10px;
-	margin-bottom: 15px;
+
+#page-logo {
+	margin: 0 auto;
 }
-nav>div>div>button {
-	width: 100%;
+
+#request-id {
+	margin-top: 4%;
+}
+#login-field > form > input {
+	margin-top: 5px !important;
+	margin-bottom: 5px !important;
+}
+#login-field > form > button {
+	width: 100% !important;
 	background-color: #33B767 !important;
+}
+
+/*font sizes*/
+.font-11 {
+	font-size: 78.57%;
+}
+.font-12 {
+	font-size: 85.71%;
+}
+.font-13{
+	font-size: 92.86%;
+}
+.font-14 {
+	font-size: 100%;
+}
+.font-15{
+	font-size: 107.14%;
+}
+.font-16{
+	font-size: 114.28%;
+}
+.font-17{
+	font-size: 121.42% !important;
+}
+.font-18 {
+	font-size: 128.57%;
+}
+.font-19{
+	font-size: 135.71%;
+}
+.font-20 {
+	font-size: 142.85%;
+}
+.font-21 {
+	font-size: 142.85%;
+}
+.font-22{
+	font-size: 157.14%;
+}
+.font-23{
+	font-size: 164.28%;
+}
+.font-24{
+	font-size: 171.42%;
+}
+.font-25{
+	font-size: 178.57%;
+}
+.font-26{
+	font-size: 185.71%;
+}
+.font-27{
+	font-size: 192.85%;
+}
+.font-28{
+	font-size: 200%;
+}
+.font-29{
+	font-size: 207.14%;
+}
+.font-30 {
+	font-size: 214.28%;
+}
+.font-40 {
+	font-size: 285.71%;
+}
+.font-48{
+ 	font-size: 342.85%;
 }

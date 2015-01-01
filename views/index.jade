@@ -1,11 +1,24 @@
 extends layout
 
 block content
-	nav.navbar.navbar-default.navbar-fixed-top
-		.row
-			.col-md-9
-				h1 LOGO
+	header.full-width
+		.row#index-header
+			.col-md-4#page-logo
+				h2 LOGO
+			.col-md-3#request-id
+				form(method='POST' action='')
+					h4.font-18 Enter your email to request a ID for you
+					.input-group
+						input.form-control(type="text" placeholder="Enter email")
+						span.input-group-btn
+							button.btn.btn-info Request
 			.col-md-2
-				input.form-control(type="text" placeholder="Username")
-				input.form-control(type="password" placeholder="Password")
-				button.btn.btn-primary(type="submit") Login
+			.col-md-2#login-field
+				form(method='POST' action='/login')
+					input.form-control(type="text" placeholder="Username" required)
+					input.form-control(type="password" placeholder="Password" required)
+					input(type="checkbox")
+					span.font-13 &nbsp;&nbsp;keep me logged in
+					button.btn.btn-primary(type="submit") Login
+	.container.full-width
+		h1 Welcome
