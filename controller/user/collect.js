@@ -10,7 +10,14 @@ var collect = {
 	},
 
 	validateUser: function (req, res, next) {
-		return next();
+		if (req.userCredential.username === 'admin' && req.userCredential.password === 'admin')
+			return next();
+		else {
+			res.json({
+				sucess: 0,
+				message: 'Wrong Username/Password'
+			});
+		}
 
 	},
 	initializeSession: function (req, res, next) {
