@@ -2,6 +2,7 @@ var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
+var session = require('express-session')
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var debug = require('debug')('school_hub');
@@ -17,9 +18,12 @@ app.set('port', process.env.PORT || 3000);
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
-    extended: false
+	extended: false
 }));
 app.use(cookieParser());
+app.use(session({
+	secret: '1234567890!@#$%^&*()'
+}))
 app.use(express.static(path.join(__dirname, 'public')));
 
 
@@ -39,7 +43,7 @@ require('./controller')(app);
 // production error handler
 // no stacktraces leaked to user
 app.use(function (req, res, next) {
-    res.render('error');
+	res.render('error');
 });
 
 app.use(function (err, req, res, next) {
@@ -47,7 +51,7 @@ app.use(function (err, req, res, next) {
 });
 
 var server = app.listen(app.get('port'), function () {
-    util.log('Express server listening on port ' + server.address().port);
+	util.log('Express server listening on port ' + server.address().port);
 });
 
 
