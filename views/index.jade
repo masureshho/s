@@ -14,10 +14,10 @@ block content
 							button.btn.btn-info Request
 			.col-md-2
 			.col-md-2#login-field
-				form(method='POST' action='/login')
-					input.form-control(type="text" placeholder="Username" required)
-					input.form-control(type="password" placeholder="Password" required)
-					input(type="checkbox")
+				form(method='POST' action='/')
+					input.form-control(type="text" name ="username" placeholder="Username" required)
+					input.form-control(type="password" placeholder="Password" name ="password" required)
+					input(type="checkbox" name= "rememberme")
 					span.font-13 &nbsp;&nbsp;keep me logged in
 					button.btn.btn-primary(type="submit") Login
 	.container.full-width
