@@ -5,6 +5,7 @@ var collect = {
 			nextUrl: nextUrl
 		});
 	},
+
 	collectUserCredential: function (req, res, next) {
 		var user = {
 			username: req.body.username,
@@ -24,16 +25,18 @@ var collect = {
 				message: 'Wrong Username/Password'
 			});
 		}
-
 	},
 	initializeSession: function (req, res, next) {
 		req.session.distroy;
 		req.session.user = {
-			username: req.userCredential.username,
-
+			username: req.userCredential.username
 		}
+		res.json({
+			cookie: req.userCredential.rememberme ? 1 : 0,
+			username: req.userCredential.username,
+			password: req.userCredential.password
+		});
 		res.end();
 	}
 };
-
 module.exports = collect;
