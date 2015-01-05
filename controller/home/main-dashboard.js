@@ -1,6 +1,6 @@
 var mainDashboard = {
 	dashboardRender: function dashboardRender(req, res) {
-		res.render('main');
+		res.render('dashboard/index');
 	}
 };
 

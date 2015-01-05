@@ -9,8 +9,13 @@ var middleware = {
 		} else if (req.cookies.login) {
 			var cookieData = JSON.parse(req.cookies.login);
 			console.log(cookieData.username);
-			if (validate(cookieData.username, cookieData.password))
+			if (validate(cookieData.username, cookieData.password)) {
+				req.session.distroy;
+				req.session.user = {
+					username: cookieData.username
+				}
 				return next();
+			}
 		}
 		var next = req.url;
 		res.redirect('/login?next=' + next);

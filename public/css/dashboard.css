@@ -1,0 +1,46 @@
+body{
+  
+}
+#header{
+  background-color: #dfdfdf;
+  width: 100%;
+  display: block;  
+}
+
+#linkholder{
+  display: block;  
+}
+.link{  
+ 
+}
+#linkholder span{
+  color: green;
+}
+.link:hover{
+background-color: red;
+cursor: pointer ;
+}
+.link:active{
+background-color: blue;
+}
+.floatLeft{
+  float: left;
+}
+.floatRight{
+  float: right;
+}
+.clearBoth{
+  clear: both;
+}
+.padding20{
+  padding: 20px;
+}
+#body{
+  background-color: #dfdffd;
+  min-height: 1000px;
+}
+
+#footer{
+background-color: #dfdfff;
+width: 100%;
+}

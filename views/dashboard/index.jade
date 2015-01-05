@@ -1,0 +1,16 @@
+extends header
+
+block content
+  #header(ng-controller='navController')
+    #linkholder
+      .padding20.link.floatLeft(ng-repeat= 'navcontent in navContent' ng-click="redirect(navcontent.route)")
+        span {{navcontent.name}}
+      .padding20.link.floatRight Logout
+      .padding20.floatRight
+        input(type='text' name='Search' placeholder='Search Your Document')
+        button Search
+      .clearBoth
+  #body
+    h1 Main Body Goes Here
+    div(ng-view)
+  include footer
