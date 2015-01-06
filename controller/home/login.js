@@ -1,3 +1,4 @@
+var common = require('../common');
 var collect = {
 	renderIndex: function (req, res, next) {
 		var nextUrl = req.query.next ? req.query.next : '/'
@@ -17,20 +18,22 @@ var collect = {
 	},
 
 	validateUser: function (req, res, next) {
-		if (req.userCredential.username === 'admin' && req.userCredential.password === 'admin')
-			return next();
-		else {
-			res.json({
-				success: 0,
-				message: 'Wrong Username/Password'
-			});
-		}
+		common.userValidate(req.userCredential.username, req.userCredential.password, function (error, result) {
+			if (result)
+				return next();
+			else {
+				res.json({
+					success: 0,
+					message: 'Wrong Username/Password'
+				});
+			}
+		});
 	},
 	initializeSession: function (req, res, next) {
 		req.session.distroy;
 		req.session.user = {
 			username: req.userCredential.username
-		}
+		};
 		res.json({
 			cookie: req.userCredential.rememberme ? 1 : 0,
 			username: req.userCredential.username,

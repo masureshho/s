@@ -2,7 +2,6 @@ var app = angular.module('school-hub', ['ngRoute']);
 
 
 app.controller('navController', function ($scope, $location) {
-  console.log($location);
   $scope.navContent = [{
     name: "Home ",
     route: "/asd"
@@ -24,9 +23,10 @@ app.controller('navController', function ($scope, $location) {
   }
 });
 
-app.config(function ($routeProvider) {
+app.config(function ($routeProvider, $locationProvider) {
+  $locationProvider.html5Mode(true);
   $routeProvider
     .when('/asd', {
-      templateUrl: '/asd.html'
+      templateUrl: '/views/partials/main.html'
     })
 });

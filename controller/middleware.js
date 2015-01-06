@@ -1,7 +1,4 @@
-var validate = function (username, password) {
-	return (username == "admin" && password == "admin") ? true : false
-}
-
+var common = require('./common');
 var middleware = {
 	authenticate: function authenticate(req, res, next) {
 		if (req.session.user) {
@@ -9,17 +6,18 @@ var middleware = {
 		} else if (req.cookies.login) {
 			var cookieData = JSON.parse(req.cookies.login);
 			console.log(cookieData.username);
-			if (validate(cookieData.username, cookieData.password)) {
-				req.session.distroy;
-				req.session.user = {
-					username: cookieData.username
-				}
-				return next();
-			}
-		}
-		var next = req.url;
-		res.redirect('/login?next=' + next);
+			common.userValidate(cookieData.username, cookieData.password, function (error, result) {
+				if (result) {
+					req.session.distroy;
+					req.session.user = {
+						username: cookieData.username
+					};
+					return next();
+				} else
+					res.redirect('/login?next=' + req.url);
+			});
+		} else
+			res.redirect('/login?next=' + req.url);
 	}
 };
-
 module.exports = middleware;
