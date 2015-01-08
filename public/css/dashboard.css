@@ -35,12 +35,26 @@ background-color: blue;
 .padding20{
   padding: 20px;
 }
-#body{
+.padding18{
+  padding: 18px;
+}
+.body{
   background-color: #dfdffd;
   min-height: 1000px;
 }
+#centerBody{
+   width: 60%;
+}
 
 #footer{
-background-color: #dfdfff;
+background-color: red;
 width: 100%;
+}
+#leftBody{
+   background-color: green;
+  width: 20%;
+}
+#rightBody{
+   background-color: blue;
+ width:20%;
 }

@@ -5,7 +5,8 @@ module.exports = {
     User.findOne({
       username: username
     }, 'password', function (error, data) {
-      if (!error) {
+      if (data) {
+        console.log(data);
         result = (password == data.password) ? true : false
         cb(null, result);
       } else

@@ -6,11 +6,16 @@ block content
       .padding20.link.floatLeft(ng-repeat= 'navcontent in navContent' ng-click="redirect(navcontent.route)")
         span {{navcontent.name}}
       .padding20.link.floatRight(ng-click="logout()") Logout
-      .padding20.floatRight
+      .padding18.floatRight
         input(type='text' name='Search' placeholder='Search Your Document')
         button Search
       .clearBoth
-  #body
+  #leftBody.body.floatLeft
+    h1 Left Body Goes Here
+  #centerBody.body.floatLeft
     h1 Main Body Goes Here
     div(ng-view)
+  #rightBody.body.floatLeft
+    h1 right Body Goes Here
+  .clearBoth
   include footer
