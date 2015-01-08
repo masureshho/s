@@ -5,7 +5,7 @@ var middleware = {
 			return next();
 		} else if (req.cookies.login) {
 			var cookieData = JSON.parse(req.cookies.login);
-			console.log(cookieData.username);
+			console.log(cookieData);
 			common.userValidate(cookieData.username, cookieData.password, function (error, result) {
 				if (result) {
 					req.session.distroy;

@@ -5,7 +5,7 @@ block content
     #linkholder
       .padding20.link.floatLeft(ng-repeat= 'navcontent in navContent' ng-click="redirect(navcontent.route)")
         span {{navcontent.name}}
-      .padding20.link.floatRight Logout
+      .padding20.link.floatRight(ng-click="logout()") Logout
       .padding20.floatRight
         input(type='text' name='Search' placeholder='Search Your Document')
         button Search

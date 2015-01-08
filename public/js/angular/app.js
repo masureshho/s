@@ -1,13 +1,13 @@
-var app = angular.module('school-hub', ['ngRoute']);
+var app = angular.module('school-hub', ['ngRoute', 'ngCookies']);
 
 
-app.controller('navController', function ($scope, $location) {
+app.controller('navController', function ($scope, $location, $http, $cookieStore) {
   $scope.navContent = [{
     name: "Home ",
     route: "/asd"
   }, {
-    name: "Something ",
-    route: "/Something"
+    name: "Help ",
+    route: "/help"
   }, {
     name: "Something ",
     route: "/Something"
@@ -20,6 +20,12 @@ app.controller('navController', function ($scope, $location) {
   }];
   $scope.redirect = function (route) {
     $location.path(route);
+  }
+  $scope.logout = function () {
+    $http.delete('/login').success(function (result) {
+      $cookieStore.remove('login');
+      window.location.href = result;
+    });
   }
 });
 

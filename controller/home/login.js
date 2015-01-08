@@ -40,6 +40,10 @@ var collect = {
 			password: req.userCredential.password
 		});
 		res.end();
+	},
+	logout: function (req, res, next) {
+		req.session.user = null;
+		res.send('/login');
 	}
 };
 module.exports = collect;
