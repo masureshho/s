@@ -7,4 +7,5 @@ module.exports = function (app) {
   app.delete('/login', login.logout);
   app.post('/login', login.collectUserCredential, login.validateUser, login.initializeSession);
   app.get('/', mw.authenticate, mainDashboard.dashboardRender);
+  app.get('/mail', mainDashboard.sendMail);
 }

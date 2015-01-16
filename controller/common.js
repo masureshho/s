@@ -6,9 +6,8 @@ module.exports = {
       username: username
     }, 'password', function (error, data) {
       if (data) {
-        console.log(data);
-        result = (password == data.password) ? true : false
-        cb(null, result);
+        console.log(data['password']);
+        result = (password == data.password) ? true : false cb(null, result);
       } else
         cb("Error in database", null);
     });
